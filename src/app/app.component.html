@@ -1,21 +1,21 @@
 
 <div class="d-flex flex-md-row align-items-center p-2 px-md-5 py-2 secondary-menu color-black">
 
-    <div class="flex-grow-1 my-0 mr-md-auto">
+    <!--<div class="flex-grow-1 my-0 mr-md-auto">
         <a routerLink="./" style="display: block;">
             <div class="mr-2" style="display: inline-block">
-                <!--<img class="" src="{{'assets/icons/logo/noja_logo_alpha.png' }}" width="32" height="32"/>-->
+                <!--<img class="" src="{{'assets/icons/logo/noja_logo_alpha.png' }}" width="32" height="32"/>--
             </div>
             <div style="display: inline-block" class="font-weight-normal noja-title"><strong>Home</strong></div>
         </a>
-    </div>
+    </div>-->
 
-    <div class="ml-4 d-inline-block">
-        <svg stroke="" class="feather user-icon">
-            <use xlink:href="assets/icons/feather-sprite.svg#shopping-bag"></use>
-        </svg>
-        <!--<span class="px-2 text-white user-name">&#45;&#45;</span>-->
-    </div>
+    <nav class="nav">
+        <a class="px-3 py-3" routerLink="." routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><span>Home</span></a>
+        <a class="px-3 py-3" routerLink="./admin" routerLinkActive="active"><span>Admin</span></a>
+        <a class="px-3 py-3" routerLink="./admin/promo" routerLinkActive="active"><span>Promo Settings</span></a>
+        <!--<a class="px-3 py-3" routerLink="./about-us" routerLinkActive="active"><span>About Us</span></a>-->
+    </nav>
 
     <!-- <nav *ngIf="isLoggedIn == false" class="mr-md-3 black-header-nav">
         <a class="pr-3 " href="http://nojasales.com">Features</a>

@@ -31,13 +31,15 @@ export class AdminComponent implements OnInit {
     }
 
     updateProduct(product: Product) {
-        console.log('It\'s OK for the Price ', product.price, product.is_promo_enabled);
+        console.log('Update with Id', product.product_id);
+
         const params = {
-            price: product.price,
-            discount: product.discount,
-            price_to_subtract: product.price_to_subtract,
+            price: product.price.toString(),
+            discount: product.discount.toString(),
+            price_to_subtract: product.price_to_subtract.toString(),
             is_promo_enabled: product.is_promo_enabled
         };
+        console.log('It\'s Ok to Update with ', params);
 
         this.apiService.updateProduct(product.product_id, params).subscribe(response => {
             if (response['success']) {

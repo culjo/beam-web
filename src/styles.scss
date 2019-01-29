@@ -1,6 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 .wrapper {
-  width: 68em;
+  //width: 68em;
 }
 
 // Start here
@@ -75,7 +75,6 @@ body {
 
     .product-grid__title {
       height: auto;
-
       &:after { display: none; }
     }
   }
@@ -130,6 +129,7 @@ body {
     max-width: 100%;
     height: auto;
     max-height: 100%;
+    border-radius: 4px;
   }
 
 
@@ -142,6 +142,7 @@ body {
     height: 3em;
     overflow: hidden;
     position: relative;
+    text-align: center;
 
     &:after {
       content: "";
@@ -158,8 +159,25 @@ body {
 
   &__price {
     color: $primary;
+    font-weight: normal;
+    letter-spacing: .4px;
+    text-align: center;
+
+  }
+
+  &__price del {
+    color: $font-color;
+    font-weight: 500;
+    font-size: 12px;
+    color: #7f8fa6;
+  }
+
+  &__discount {
+    color: $primary;
     font-weight: bold;
     letter-spacing: .4px;
+    text-align: center;
+
   }
 
 
@@ -197,6 +215,7 @@ body {
     //margin-top: .875rem;
     margin-top: .4375rem;
     margin-bottom: 0;
+    text-align: justify;
   }
 
 

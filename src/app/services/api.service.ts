@@ -3,6 +3,7 @@ import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Product, ProductResponse} from '../models/product';
 import {Observable, of} from 'rxjs';
 import {catchError, map, tap} from 'rxjs/operators';
+import {UserProductResponse} from '../models/user-products';
 
 const httpOptions = {
     headers: new HttpHeaders({'Content-Type': 'application/json'})
@@ -22,6 +23,10 @@ export class ApiService {
         return this.httpClient.get<ProductResponse>(`${this.baseUrl}/products`);
     }
 
+    public fetchUserProducts(userId) {
+        return this.httpClient.get<UserProductResponse>(`${this.baseUrl}/users/${userId}/products`);
+    }
+
 
     /**
      * Endpoint for updating a product
@@ -35,7 +40,18 @@ export class ApiService {
         );
     }
 
+    public loginRegisterUser(params) {
+        return this.httpClient.post(`${this.baseUrl}/users/login`, params, httpOptions);
+    }
 
+
+    public subscribeUser(productId: number, params) {
+        return this.httpClient.post(`${this.baseUrl}/products/${productId}/subscribe`, params, httpOptions);
+    }
+
+    /**
+     * Test APIs
+     */
     public fecthSomthing(): Observable<Object> {
         return this.httpClient.get('https://jsonplaceholder.typicode.com/todos/1')
             .pipe(
