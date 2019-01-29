@@ -5,10 +5,16 @@
 
     <div class="col-9 mx-auto">
 
+        <ngb-alert *ngIf="!staticAlertClosed" (close)="staticAlertClosed = true">You can start and stop promo bonanza by pressing the buttons bellow</ngb-alert>
+
+
+        <ngb-alert *ngIf="errorMessage" type="danger" (close)="errorMessage = null">{{ errorMessage }}</ngb-alert>
+        <ngb-alert *ngIf="successMessage" type="success" (close)="successMessage = null">{{ successMessage }}</ngb-alert>
+
       <form [formGroup]="promoTimerForm" (submit)="onPromoTimerSubmitted()" class="">
 
-        <div>
-          <span class="control-label">Set Interval Time Product Price Reduction</span>
+        <div class="py-4">
+          <h3 class="control-label text-center">Set Interval Time Product Price Reduction</h3>
         </div>
 
         <div class="form-row py-5">
@@ -27,12 +33,14 @@
 
         </div>
 
-        <div class="form-group">
-          <button type="submit" class="btn btn-primary btn-lg btn-block">Start Promo Treasure Hunt</button>
-          <button type="button" class="btn btn-secondary btn-lg btn-block">End Promo Treasure Hunt</button>
-        </div>
+
 
       </form>
+
+        <div class="form-group">
+            <button (click)="startPromo()" type="button" class="btn btn-primary btn-lg btn-block">Start Promo Treasure Hunt</button>
+            <button (click)="stopPromo()" type="button" class="btn btn-secondary btn-lg btn-block">End Promo Treasure Hunt</button>
+        </div>
 
     </div>
 

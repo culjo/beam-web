@@ -49,6 +49,14 @@ export class ApiService {
         return this.httpClient.post(`${this.baseUrl}/products/${productId}/subscribe`, params, httpOptions);
     }
 
+    public startPromo() {
+        return this.httpClient.get(`${this.baseUrl}/promos/start`);
+    }
+
+    public stopPromo() {
+        return this.httpClient.get(`${this.baseUrl}/promos/stop`);
+    }
+
     /**
      * Test APIs
      */
