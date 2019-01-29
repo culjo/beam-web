@@ -1,20 +1,28 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-</div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
 
+<div class="d-flex flex-md-row align-items-center p-2 px-md-5 py-2 secondary-menu color-black">
+
+    <div class="flex-grow-1 my-0 mr-md-auto">
+        <a routerLink="./" style="display: block;">
+            <div class="mr-2" style="display: inline-block">
+                <!--<img class="" src="{{'assets/icons/logo/noja_logo_alpha.png' }}" width="32" height="32"/>-->
+            </div>
+            <div style="display: inline-block" class="font-weight-normal noja-title"><strong>Home</strong></div>
+        </a>
+    </div>
+
+    <div class="ml-4 d-inline-block">
+        <svg stroke="" class="feather user-icon">
+            <use xlink:href="assets/icons/feather-sprite.svg#shopping-bag"></use>
+        </svg>
+        <!--<span class="px-2 text-white user-name">&#45;&#45;</span>-->
+    </div>
+
+    <!-- <nav *ngIf="isLoggedIn == false" class="mr-md-3 black-header-nav">
+        <a class="pr-3 " href="http://nojasales.com">Features</a>
+        <a class="pr-3 " href="http://nojasales.com">Support</a>
+        <a class="pr-3 " href="http://nojasales.com/privacy.html">Privacy</a>
+    </nav> -->
+
+</div>
+
+<router-outlet></router-outlet>

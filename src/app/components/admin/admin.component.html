@@ -1,0 +1,93 @@
+
+
+<div class="container">
+
+  <div class="row">
+    <div class="col">
+      <h2>All Products</h2>
+    </div>
+  </div>
+
+  <div class="row">
+
+    <div class="col">
+
+      <div class="list-group">
+
+        <a *ngFor="let product of allProducts" class="list-group-item list-group-item-action flex-column align-items-start">
+
+          <div  class="d-flex w-100 justify-content-between pb-2">
+            <h5 class="mb-1">{{product.name}}</h5>
+            <!--<small>{{product.updated_on | date:'fullDate'}}</small>-->
+            <small>{{product.updated_on | date}}</small>
+          </div>
+          <p class="mb-1">{{product.description}}</p>
+          <small>{{product.manufacturer}}</small>
+          <small *ngIf="!product.is_promo_enabled" class="ml-2 text-danger">Promo Inactive</small>
+
+          <div>
+            <form #productForm="ngForm" (submit)="updateProduct(product)" class="form-inline">
+
+              <div class="input-group input-group-sm my-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="price-{{product.product_id}}">Price</span>
+                </div>
+                <input #price="ngModel" [(ngModel)]="product.price" name="price{{product.product_id}}"  value="{{product.price}}" placeholder="0.00" type="text" required class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+              </div>
+
+              <!--Discount-->
+              <div class="input-group input-group-sm my-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">Discount</span>
+                </div>
+                <input #discount="ngModel" [(ngModel)]="product.discount" name="discount{{product.product_id}}" value="{{product.discount}}" type="number" required placeholder="0.00" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+              </div>
+
+              <div class="input-group input-group-sm my-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">Reduce By</span>
+                </div>
+                <input #subtract="ngModel" [(ngModel)]="product.price_to_subtract" name="subtract{{product.product_id}}" value="{{product.price_to_subtract}}" required type="number" placeholder="0.00" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+              </div>
+
+
+              <div class="form-group form-check my-3 mx-2">
+                <input #promo="ngModel" [(ngModel)]="product.is_promo_enabled" name="promo{{product.product_id}}" id="promo{{product.product_id}}" value="{{product.price_to_subtract}}" required type="checkbox" placeholder="0.00" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+                <!--<label class="form-check-label" for="promo{{product.product_id}}">Promo On</label>-->
+              </div>
+
+              <div class="input-group input-group-sm my-3">
+                <div class="btn-group">
+                  <button type="submit" class="btn btn-primary btn-sm">Save</button>
+                </div>
+              </div>
+
+             <!--<div class="input-group input-group-sm my-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">Promo On</span>
+                </div>
+                <input #promo="ngModel" [(ngModel)]="product.is_promo_enabled" name="promo{{product.product_id}}" value="{{product.price_to_subtract}}" required type="checkbox" placeholder="0.00" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+              </div>-->
+
+            </form>
+          </div>
+
+        </a>
+
+
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+
+<ng-template #noproduct>
+  <div class="row">
+    <div class="col">No Product Available</div>
+  </div>
+</ng-template>

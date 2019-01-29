@@ -1,0 +1,41 @@
+
+<div class="container mx-auto">
+
+  <div class="row">
+
+    <div class="col-9 mx-auto">
+
+      <form [formGroup]="promoTimerForm" (submit)="onPromoTimerSubmitted()" class="">
+
+        <div>
+          <span class="control-label">Set Interval Time Product Price Reduction</span>
+        </div>
+
+        <div class="form-row py-5">
+          <div class="col">
+            <label for="hours">Hours</label>
+            <input formControlName="hours" type="number" class="form-control form-control-lg" id="hours" name="hour" placeholder="00">
+          </div>
+          <div class="col">
+            <label for="minutes">Minutes</label>
+            <input formControlName="minutes" type="number" maxlength="2" class="form-control form-control-lg" id="minutes" name="hour" placeholder="00">
+          </div>
+          <div class="col">
+            <label for="seconds">Seconds</label>
+            <input formControlName="seconds" type="number" maxlength="2" class="form-control form-control-lg" id="seconds" name="hour" placeholder="00">
+          </div>
+
+        </div>
+
+        <div class="form-group">
+          <button type="submit" class="btn btn-primary btn-lg btn-block">Start Promo Treasure Hunt</button>
+          <button type="button" class="btn btn-secondary btn-lg btn-block">End Promo Treasure Hunt</button>
+        </div>
+
+      </form>
+
+    </div>
+
+  </div>
+
+</div>
